@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "RedDwarfData: a simplified match dataset for machine learning in StarCraft"
 author: "J. J. Merelo"
 date: "20 de noviembre de 2017"
 output: pdf_document
