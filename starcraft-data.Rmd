@@ -10,6 +10,6 @@ abstract: Starcraft is one of the most interesting arenas to test new machine le
 ```
 
 # Introduction
-
+\emph{StarCraft} is a well-known Real Time Strategy (\emph{RTS}) game whose first version was released in 1998. The game consists of two opponents trying to beat each other over a squared arena. Every player has to build workers and buildings using the available resources located over the terrain. There exit three different kinds of species, any of then having different kinds of individuals. Species and individual differ in their skills, so that players have a wide range of possibilities in order to plan their strategies.
 
 # Bibliography
