@@ -14,6 +14,10 @@ abstract: Starcraft is one of the most interesting arenas to test new machine le
 
 \emph{StarCraft} has become popular among researchers thanks to \emph{BWAPI}, an API developed by the community that allows programming artificial agents. These agents can act just like regular players, according to a previously established algorithm; but, more important, they can collect data as matches are running. The data collected this way can be later analysed, so that machine learning techniques can be applied for both supervised and unsupervised learning.
 
+## Data extraction and filtering
+
+The data was obtained from whoever dataset, and then we proceeded to process it.
+
 ## The big picture
 
 A few macro analysis of the data in this dataset will allow us to compare it with other datasets and also appraise its balance and general features. The duration of the matches is represented below.
