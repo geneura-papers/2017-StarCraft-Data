@@ -14,7 +14,11 @@ bibliography: prediction.bib
 
 \emph{StarCraft} is a well-known Real Time Strategy (\emph{RTS}) game whose first version was released in 1998. The game consists of two opponents trying to beat each other over a squared arena. Every player has to build workers and buildings using the available resources located over the terrain. There exit three different kinds of species, any of then having different kinds of individuals. Species and individual differ in their skills, so that players have a wide range of possibilities in order to plan their strategies. The need to dynamically take decisions for both the short and the long terms make RTS adequate scenarios to test AI algorithms [@ontanon2013survey] that could be used later in real problems including financial, military and logistics problems. 
 
-\emph{StarCraft} has become popular among researchers thanks to \emph{BWAPI}, an API developed by the community that allows programming artificial agents. These agents can act just like regular players, according to a previously established algorithm; but, more important, they can collectse data as matches are running. The data collected this way can be later analysed, so that machine learning techniques can be applied for both supervised and unsupervised learning.
+\emph{StarCraft} has become popular among researchers thanks to \emph{BWAPI}, an API developed by the community that allows programming artificial agents and that was developed for StarCraft competitions [@buro2012real]. These agents can act just like regular players, according to a previously established algorithm; but, more important, they can collectse data as matches are running. The data collected this way can be later analysed, so that machine learning techniques can be applied for both supervised and unsupervised learning.
+
+Developing and releasing datasets for this task is thus a way of expanding research in this area and allowing researchers to develop their own bots or prediction algorithms without having to scrape them or actually play the games, a time-consuming task, to extract data from them. Several researchers have done so and we will refer to them in the state of the art; in this paper we part from Robertson and Watson's dataset [@RobertsonW14] and create a simpler one that can be used without needing many resources; even so, the data set is balanced with respect to duration, races and number of resources used by the players. 
+
+The rest of the paper is organized as follows: next we will present the Starcraft datasets that have been published so far. In the next section we will show how Robertson and Watson's dataset was processed and the rationale for doing it that way. Then we will present a macro picture of the data set, to eventually draw some conclusions from it and possible lines of work using this dataset.
 
 ## State of the art
 
@@ -31,5 +35,7 @@ A few macro analysis of the data in this dataset will allow us to compare it wit
 **Include R code for histogram here**
 
 The mode is between 20 and 25 minutes, with average equal to **include variables here** and median **include median**. 
+
+## Conclusions
 
 ## References
