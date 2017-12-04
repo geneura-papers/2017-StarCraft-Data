@@ -22,11 +22,11 @@ The rest of the paper is organized as follows: next we will present the Starcraf
 
 ## State of the art
 
-The main motivation for writing this paper was the proliferation of StarCraft datasets in the last few years. Players have been uploading their matches to several websites, such as TeamLiquid or CC, since... This dataset are usually used by the player community to learn new playing techniques from other players. However, these datasets are in raw form and require some kind of parsing and filtering in order to LISTA DE STARDATA. Moreover, a lot of uploaded replays may be corrupt or incomplete. Different authors have been processing these replays to create datasets that can be used to predict the outcome of a match or a battle. First paper that describes the processing of replays was the one presented by Ravari et \cite{Ravari09}, where they processed replays to create a dataset to apply WHATEVER. The number of replays was XXXX.
+The main motivation for writing this paper was the proliferation of new StarCraft datasets in the last few years. Players have been uploading their matches to several websites, such as TeamLiquid or CC, since... These datasets are usually employed by the player community to learn new playing techniques from other players. From the point of view of using them for AI training, however, these datasets are in raw form and require some kind of parsing and filtering in order to LISTA DE STARDATA. Moreover, a lot of uploaded replays may be corrupt or incomplete. Different authors have been processing these replays to create datasets that can be used to predict the outcome of a match or a battle or simply gather insights on gaming strategies. The first paper that describes the processing of replays was the one presented by Ravari et \cite{Ravari09}, where they processed replays to create a dataset to apply WHATEVER. The number of replays was XXXX.
 
 Robertson and Watson
 
-Recently, the work by Lin et al. \cite{Stardata17} presented the largest dataset to date. It includes 65646 replays, storing the full state of the game, including up to 30 feature by unit and battle detections. Even using compression mechanisms, this dataset requires 365GB of space. 
+Recently, Lin et al. \cite{Stardata17} have released the largest dataset to date. It includes 65646 replays, storing the full state of the game, including up to 30 feature by unit and battle detections. Even using compression mechanisms, this dataset requires 365GB of space. 
 
 ## Data extraction and filtering
 
