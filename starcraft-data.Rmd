@@ -32,7 +32,18 @@ However, there is not a small and limited dataset ready to use for teaching purp
 
 ## Data extraction and filtering
 
-The data was obtained from whoever dataset, and then we proceeded to process it.
+Six relational databases are provided by the work of [@RobertsonW14] so an intermediate step to produce an usable CSV file is needed. A query which extract data from one single replay is developed, and it is explained on the lines below. A simple function which iterates over all the replays is developed too, but the most difficult task is the parsing of one replay.
+
+Focusing in one single match, identified by it \emph{ReplayID}, the first step is take the \emph{Duration} and the identifiers \emph{PlayerReplayID} of the two players involved in the game. The \emph{PlayerReplayID} with less value is taken as the first player, but the data is not biased by this fact. 
+
+In the second place, it is important to take a time reference to be able to track the match in every moment. The chosen reference is the \emph{Frame} when a change in resources (\emph{Minerals}, \emph{Gas} and \emph{Supply}) is performed. This instant does not have to be the same for the two players, so all the instant when a change is discovered are saved. This choice implies a lot of empty values in the database; however, it is easily fixed taking the last known value to fill each empty one: if there is not a change for a player, the resources would be the last seen ones.
+
+This decision is also important to track the units: they are valued with their price in resources, and the value recorded in the original database is splitted by regions. To register the value of some units, all the region's values have to be summed, but the frame when these changes occur are not the same that the  resources' ones, so the last change for each region is saved and accumulated.
+
+These units values are also available in the enemy's direction: the estimation of the enemy's values is recorded in the dataset, so the last proccess is also done for these records.  
+
+With all the data well-formed, only the \emph{ReplayID}, \emph{Winner} and \emph{Duration} have to be added to the match. The data of a game have not any missing values, so they are ready to be saved. As it was said before, this proccess has to be repeated for each match. 
+
 
 ## The big picture
 
