@@ -118,7 +118,5 @@ if(!file.exists("datos/normalizado.csv")){
     rm(data)
 
 }else{
-
     t <- read.csv2("datos/normalizado.csv")
-  
 }
