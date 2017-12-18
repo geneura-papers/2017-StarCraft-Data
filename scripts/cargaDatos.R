@@ -1,33 +1,34 @@
 #
 # CARGA DE DATOS
 # 
-
-prefix <- "/home/jmerelo/Asignaturas/TFM/StarCraft-winner-prediction/data"
+require("data.table")
+require("stringr")
+prefix <- "/home/jmerelo/Asignaturas/TFM/StarCraft-winner-prediction/data/"
 
 if(!file.exists("datos/normalizado.csv")){
 
                                         #Carga de los datos
-    data.pvp <- read.csv(paste0(prefix,"datos/data_pvp.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.pvp <- read.csv(paste0(prefix,"data_pvp.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.pvp$Race = "Protoss"
     data.pvp$RaceEnemy = "Protoss"
 
-    data.pvt <- read.csv(paste0(prefix,"datos/data_pvt.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.pvt <- read.csv(paste0(prefix,"data_pvt.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.pvt$Race = "Protoss"
     data.pvt$RaceEnemy = "Terran"
     
-    data.pvz <- read.csv(paste0(prefix,"datos/data_pvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.pvz <- read.csv(paste0(prefix,"data_pvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.pvz$Race = "Protoss"
     data.pvz$RaceEnemy = "Zerg"
     
-    data.tvt <- read.csv(paste0(prefix,"datos/data_tvt.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.tvt <- read.csv(paste0(prefix,"data_tvt.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.tvt$Race = "Terran"
     data.tvt$RaceEnemy = "Terran"
     
-    data.tvz <- read.csv(paste0(prefix,"datos/data_tvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.tvz <- read.csv(paste0(prefix,"data_tvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.tvz$Race = "Terran"
     data.tvz$RaceEnemy = "Zerg"
     
-    data.zvz <- read.csv(paste0(prefix,"datos/data_zvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
+    data.zvz <- read.csv(paste0(prefix,"data_zvz.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
     data.zvz$Race = "Zerg"
     data.zvz$RaceEnemy = "Zerg"
 
