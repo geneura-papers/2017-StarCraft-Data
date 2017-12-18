@@ -223,5 +223,6 @@ starcraft-data.pdf
 
 *~
 
-**/.Rdata
+**/.RData
+**/.Rhistory
 scripts/datos/normalizado.csv
