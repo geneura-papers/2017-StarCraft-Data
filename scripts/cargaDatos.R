@@ -5,7 +5,7 @@ require("data.table")
 require("stringr")
 prefix <- "/home/jmerelo/Asignaturas/TFM/StarCraft-winner-prediction/data/"
 
-if(!file.exists("datos/normalizado.csv")){
+if(!file.exists("script/datos/normalizado.csv")){
 
                                         #Carga de los datos
     data.pvp <- read.csv(paste0(prefix,"data_pvp.csv"), colClasses=c("integer",rep("numeric",28),"factor"))
@@ -113,10 +113,10 @@ if(!file.exists("datos/normalizado.csv")){
     
     info <- unique(t[,c("id","Winner_Race","Loser_Race","Duration")])
     
-    write.csv2("datos/normalizado.csv",x = t)
+    write.csv2("script/datos/normalizado.csv",x = t)
 
     rm(data)
 
 }else{
-    t <- read.csv2("datos/normalizado.csv")
+    t <- read.csv2("script/datos/normalizado.csv")
 }
