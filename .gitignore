@@ -222,3 +222,6 @@ TSWLatexianTemp*
 starcraft-data.pdf
 
 *~
+
+**/.Rdata
+scripts/datos/normalizado.csv
