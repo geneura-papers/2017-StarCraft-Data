@@ -40,7 +40,7 @@ Instead providing the game logs directly, Robertson and Watson [@RobertsonW14] d
 
 Recently, and built upon the Synnaeve and Bessiere work [@Synnaeve12], Lin et al. [@Stardata17] have released the largest dataset to date. It includes 65646 replays, storing the full state of the game every 3 frames, including up to 30 features by unit and battle detections, storing all the data in TorchCraft format to be accessed by specific software clients. Even using compression mechanisms, this dataset requires 365GB of space. The aim of using this dataset is to apply Deep Learning algorithms that require a large amount of data.
 
-However, there is not a small and limited dataset ready to use for teaching purposes, for example, to directly use as input for certain algorithms without any modification. This is the reason we have used the Robertson and Watson database [@RobertsonW14] to extract a limited number of features and parsed it directly to CSV (Comma Separated Values) format. These CSV files can be easily downloaded and straightforward parsed with any programming language. <!--PABLO: Any other ideas to justify our dataset?-->
+However, there is not a small and limited dataset ready to use for teaching purposes, for example, to directly use as input for certain algorithms without any modification. This is the reason we have used the Robertson and Watson database [@RobertsonW14] to extract a limited number of features and parsed it directly to CSV (Comma Separated Values) format. These CSV files can be easily downloaded and straightforwardly parsed with any programming language. <!--PABLO: Any other ideas to justify our dataset?-->
 
 ## Data extraction and filtering
 
