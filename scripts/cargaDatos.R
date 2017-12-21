@@ -3,7 +3,7 @@
 # 
 require("data.table")
 require("stringr")
-prefix <- "/home/jmerelo/Asignaturas/TFM/StarCraft-winner-prediction/data/"
+prefix <- "/home/jmerelo/txt/docencia/TFMs/StarCraft-winner-prediction/data/"
 
 if(!file.exists("script/datos/normalizado.csv")){
 
