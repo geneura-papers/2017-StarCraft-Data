@@ -44,15 +44,11 @@ However, there is not a small and limited dataset ready to use for teaching purp
 
 One of the advantages of the presented dataset is that they are already pre-processed and ready to use. The origin of the samples are the replays obtained by [@RobertsonW14]. As previously stated, they provided the data in the form of a huge relational database, so an intermediate step to produce an usable and manageable CSV file was needed. <!--A query which extract data from one single replay has been developed; it is explained on the lines below. A simple function which iterates over all the replays has been developed too, but the most difficult task is parsing individual replays. PABLO: these phrases do not add useful information--> 
 
-For every available match in the database, identified by it \emph{ReplayID}, a different number of samples is extracted. The first step is to take the \emph{Duration} and the identifiers \emph{PlayerReplayID} of the two players involved in the game. The \emph{PlayerReplayID} with the minimum value is taken as the first player; this does not actually introduce a bias. <!-- Pablo: why? Is always the player 1? Because usually people upload the games if they win
-Antonio: The dataset is nearly-balanced, so I think there is no problem here :)
--->
+For every available match in the database, identified by it \emph{ReplayID}, a different number of samples is extracted. The first step is to take the \emph{Duration} and the identifiers \emph{PlayerReplayID} of the two players involved in the game. The \emph{PlayerReplayID} with the minimum value is taken as the first player; this does not actually introduce a bias. <!-- Pablo: why? Is always the player 1? Because usually people upload the games if they win-->
 
 Because of the dynamic nature of the game, it is important to use a time reference to be able to track the match in every moment. Instead sampling the matches every certain number of frames as other authors propose, the chosen reference is the \emph{Frame} when a change in resources (\emph{Minerals}, \emph{Gas} and \emph{Supply}) occurs. This instant does not have to be the same for the two players, so all the instants when a change is discovered are saved. This choice implies a lot of empty values in the database; however, this is easily fixed taking the last known value to fill each empty one: if there is not a change for a player, the resources would be the last seen ones.
 
-This decision is also important to track the units, that are valued by their price in resources. However, the value recorded in the original database is split by regions. To register the value of some units, all the region's values have to be summed up, but the frame when these changes occur are not the same that the  resources' ones, so the last change for each region is saved and accumulated. <!--Pablo: I do not understand the last phrase
-Antonio: Let 2000 be the current frame, because a gas change is performed. Maybe the changes in a region occurs in 1400 and 2300, so as 1400 is lower than 2000 (the reference), that is the frame selected to sum up.
---> The same process is also performed for the enemy units. However, this value is an estimation, not a real one, because due to the rules, a player do not know nothing about the enemy unless they see the other. <!-- Antonio: I think this is important, it is an estimated value! But "they see the other" sounds strange...-->
+This decision is also important to track the units, that are valued by their price in resources. However, the value recorded in the original database is split by regions. To register the value of some units, all the region's values have to be summed up, but the frame when these changes occur are not the same that the  resources' ones, so the last change for each region is saved and accumulated. <!--Pablo: I do not understand the last phrase--> The same process is also performed for the enemy units.
 
 <!--These units values are also available at the enemy side: the estimation of the enemy values is recorded in the dataset, so the same process is also done for these records. Pablo: I don't know when to use the 's with some names, but I think it is only used when the name "possesses" the thing :P However, I summarized this paragraph above -->
 
@@ -79,6 +75,11 @@ ggplot(duration,aes(x=maxFrames/24/60)) +
 
 
 The mode is between 20 and 25 minutes, with average equal to **include variables here** and median **include median**. 
+
+<!-- Número de partidas de cada de las razas -->
+
+<!-- Porcentaje de victorias de cada una de las razas -->
+
 
 ## Conclusions
 
