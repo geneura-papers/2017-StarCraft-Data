@@ -1,6 +1,6 @@
 ---
 title: "RedDwarfData: a simplified dataset of StarCraft matches"
-author: "J. J. Merelo"
+author: "J. J. Merelo, Antonio Álvarez Caballero, Antonio Fernández-Ares, Pablo García-Sánchez and Victor Rivas"
 date: "27 de noviembre de 2017"
 output: pdf_document
 abstract: The game Starcraft is one of the most interesting arenas to test new machine learning and computational intelligence techniques; however, StarCraft matches take a long time and creating a good dataset for training can be hard; besides, analyzing match logs to extract the main characteristics can also be done in many different ways to the point that extracting and processing data itself can take an inordinate amount of time. In this paper we present one such simplified dataset extracted from Robinson and Watson, which we have called RedDwarfData, containing several thousand matches processed to frames, so that temporal studies can also be undertaken. This dataset is available under a free license. An initial analysis and appraisal of these matches is also made. 
