@@ -57,7 +57,9 @@ With all the data well-formed, only the \emph{ReplayID}, \emph{Winner} and \emph
 
 ## The big picture
 
-A few macro analysis of the data in this dataset will allow us to compare it with other datasets and also appraise its balance and general features. The duration of the matches is represented below.
+A few macro analysis of the data in this dataset will allow us to compare it with other datasets and also appraise its balance and general features. The data set, which is available [from GitHub under a free license](https://github.com/analca3/StarCraft-winner-prediction/tree/master/data), includes `r unique.ids` different matches with matches among all different races available in Starcraft. 
+
+The duration of the matches is represented below.
 
 ```{r duration,echo=FALSE}
 library(ggplot2)
