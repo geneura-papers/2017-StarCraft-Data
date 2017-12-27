@@ -8,7 +8,7 @@ author:
 - name: Antonio Fernández-Ares
   affiliation:  University of Granada, Spain
 - name: Pablo García-Sánchez
-  affiliation:  University of Oviedo, Spain
+  affiliation:  University of Cadiz, Spain
 - name: Victor Rivas
   affiliation:  University of Jaen, Spain
 date: "27 de noviembre de 2017"
