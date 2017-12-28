@@ -90,7 +90,12 @@ ggplot(duration,aes(x=maxFrames/24/60)) +
 
 The mode is between 20 and 25 minutes, with average equal to `r mean(duration$maxFrames/24/60)` and median `r mean(duration$maxFrames/24/60)`; they are not too different which indicates that the distribution is not too skewed. 
 
-<!-- Número de partidas de cada de las razas -->
+```{r duration,echo=FALSE}
+library(ggthemes)
+load("scripts/datos/match.Rdata")
+ggplot(aes(x=WL),data=match.data)+geom_bar()+theme_tufte()+xlab("Winner.Loser")
+```
+The combination Terran vs. Protoss includes the bigger number of matches, with around 1200.
 
 <!-- Porcentaje de victorias de cada una de las razas -->
 
