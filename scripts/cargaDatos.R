@@ -3,7 +3,7 @@
 # 
 require("data.table")
 require("stringr")
-prefix <- "/home/jmerelo/txt/docencia/TFMs/StarCraft-winner-prediction/data/"
+prefix <- "/home/jmerelo/Asignaturas/TFM/StarCraft-winner-prediction/data/"
 
 if(!file.exists("script/datos/normalizado.csv")){
 
@@ -33,7 +33,7 @@ if(!file.exists("script/datos/normalizado.csv")){
     data.zvz$RaceEnemy = "Zerg"
 
 #Concatenamos
-    data <- rbindlist(list(data.pvp,data.pvt,data.pvp,data.tvt,data.tvz,data.zvz),use.names = TRUE, fill=TRUE)
+    data <- rbindlist(list(data.pvp,data.pvt,data.pvz,data.tvt,data.tvz,data.zvz),use.names = TRUE, fill=TRUE)
     rm(data.pvp,data.pvt,data.pvz,data.tvt,data.tvz,data.zvz)
     
     
@@ -113,7 +113,7 @@ if(!file.exists("script/datos/normalizado.csv")){
     
     info <- unique(t[,c("id","Winner_Race","Loser_Race","Duration")])
     
-    write.csv2("script/datos/normalizado.csv",x = t)
+    write.csv2("datos/normalizado.csv",x = t)
 
     rm(data)
 
