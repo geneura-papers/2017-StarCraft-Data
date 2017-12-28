@@ -88,7 +88,7 @@ ggplot(duration,aes(x=maxFrames/24/60)) +
 ```
 
 
-The mode is between 20 and 25 minutes, with average equal to **include variables here** and median **include median**. 
+The mode is between 20 and 25 minutes, with average equal to `r mean(duration$maxFrames/24/60)` and median `r mean(duration$maxFrames/24/60)`; they are not too different which indicates that the distribution is not too skewed. 
 
 <!-- Número de partidas de cada de las razas -->
 
