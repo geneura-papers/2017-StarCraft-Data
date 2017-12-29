@@ -1,20 +1,21 @@
 ---
 title: 'RedDwarfData: a simplified dataset of StarCraft matches'
-author:
-- affiliation: University of Granada, Spain
-  name: J. J. Merelo
-- affiliation: University of Oviedo, Spain
-  name: Antonio Álvarez Caballero
-- affiliation: University of Granada, Spain
-  name: Antonio Fernández-Ares
-- affiliation: University of Cádiz, Spain
-  name: Pablo García-Sánchez
-- affiliation: University of Jaen, Spain
-  name: Victor Rivas
-date: "27 de noviembre de 2017"
+author: |
+  | Juan J. Merelo-Guervós, Antonio Fernández-Ares
+  | University of Granada, Spain
+  |
+  | Antonio Álvarez Caballero
+  | University of Oviedo, Spain
+  |
+  | Pablo García-Sánchez
+  | University of Cádiz, Spain
+  |
+  | Victor Rivas
+  | University of Jaen, Spain
+date: "December 29th, 2017"
 output:
-  pdf_document: default
-  html_document: default
+  pdf_document: 
+    keep_tex: true
 bibliography: prediction.bib
 abstract: The game Starcraft is one of the most interesting arenas to test new machine
   learning and computational intelligence techniques; however, StarCraft matches take
@@ -34,10 +35,8 @@ abstract: The game Starcraft is one of the most interesting arenas to test new m
 knitr::opts_chunk$set(cache=TRUE)
 source("scripts/funciones.R")
 library(ggplot2)
+library(ggthemes)
 load("scripts/datos/duration.Rdata")
-
-# Load data. normalizado.csv will have to be generated using the original files or downloaded from the release of this repo and placed in that directory
-#t <- read.csv2("scripts/datos/normalizado.csv")
 
 #Tamaño del conjunto de datos
 unique.ids <- length(duration$id)
@@ -103,9 +102,8 @@ ggplot(duration,aes(x=maxFrames/24/60)) +
 The mode is between 20 and 25 minutes, with average equal to `r mean(duration$maxFrames/24/60)` and median `r mean(duration$maxFrames/24/60)`; they are not too different which indicates that the distribution is not too skewed. 
 
 ```{r wl,echo=FALSE}
-library(ggthemes)
 load("scripts/datos/match.Rdata")
-ggplot(aes(x=WL),data=match.data)+geom_bar()+theme_tufte()+xlab("Winner.Loser")
+ggplot(aes(x=WL),data=match.data)+geom_bar()+theme_tufte()+xlab("Winner.Loser")+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
 The combination Terran vs. Protoss includes the bigger number of
 matches, with close to two thousands, of which the majority are won by
@@ -132,7 +130,7 @@ ggplot(aes(x=reorder(Race,-Ratio),y=Ratio),data=wins.data)+geom_bar(stat="identi
 Both macro measures show that the data set is well balanced, and includes battles in all possible combinations. On the other hand, we can use match data to find out if the duration of the match is affected by the combination of races
 
 ```{r match.duration,echo=FALSE}
- ggplot(aes(x=WL,y=Duration),data=match.data)+geom_boxplot()+theme_tufte()+xlab("Winner.Loser")
+ ggplot(aes(x=WL,y=Duration),data=match.data)+geom_boxplot()+theme_tufte()+xlab("Winner.Loser")+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
 
 And the chart shows that, except for the matches that include Zerg against Zerg and Protoss vs. Protoss, duration is quite similar and is more affected by the game dynamics that by differences or similarities between races. 
@@ -140,7 +138,8 @@ And the chart shows that, except for the matches that include Zerg against Zerg 
 ## Conclusions
 
 Our intention with the release of RedDwarfData and this report was to introduce a new lightweight dataset that includes matches by all races and that can be used for drawing conclusions about Starcraft matches, as well as use them to actually train bots that play Starcraft. An initial exploratory analysis draws the conclusion that the Zerg might be the best race to use in a game bot; however, this macro conclusion will have to be qualified by an actual analysis of the strategies generally used by Zergs in the particular games included in the data set.
-RedDwarfData and the scripts that are used to process it are hosted [in Github: `https://github.com/analca3/StarCraft-winner-prediction`](https://github.com/analca3/StarCraft-winner-prediction). This paper is hosted also in GitHub, and includes the scripts used to generate aggregated data and the data that has been used to generate this paper, which is written in R Markdown and includes the scripts to generate these charts. It has a Apache license and can be downloaded [from GitHub at `https://github.com/geneura-papers/2017-StarCraft-Data`](https://github.com/geneura-papers/2017-StarCraft-Data)
+RedDwarfData and the scripts that are used to process it are hosted [in Github: `https://github.com/analca3/StarCraft-winner-prediction`](https://github.com/analca3/StarCraft-winner-prediction). This paper is hosted also in GitHub, and includes the scripts used to generate aggregated data and the data that has been used to generate this paper, which is written in R Markdown and includes the scripts to generate these charts. It has a Apache license and can be downloaded [from GitHub at `https://github.com/geneura-papers/2017-StarCraft-Data`](https://github.com/geneura-papers/2017-StarCraft-Data). 
+This dataset has been used already in [@ijcci17starcraft] to make early predictions of the outcome of the match, in order to shorten the time needed to evaluate bots in an optimization environment. Our intention is to create surrogate models of matches so that we can use evolutionary algorithms to create game bots that can be competitive in this game. 
 
 ## Acknowledgements
 
