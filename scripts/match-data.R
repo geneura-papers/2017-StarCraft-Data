@@ -1,4 +1,5 @@
 require(data.table)
+require(plyr)
 t <- read.csv2("datos/normalizado.csv")
 load("datos/duration.Rdata")
 
@@ -19,3 +20,20 @@ for( i in 1:nrow(duration)) {
                                    Duration=duration[i,"maxFrames"]))
 }
 match.data$WL=interaction(match.data$Winner,match.data$Loser)
+
+wins.data <- data.frame(Race=character(),
+                        Wins=integer(),
+                        Loses=integer(),
+                        Ratio=double())
+
+for (i in c("Protoss","Zerg","Terran")) {
+    race.data <- match.data[ match.data$Winner == i |  match.data$Loser == i,]
+    wins.data <- rbind( wins.data,
+                       data.frame( Race=i,
+                                  Wins=length(race.data[match.data$Winner == i,]$id),
+                                  Loses=length(race.data[match.data$Loser == i,]$id) )
+                       )
+}
+wins.data$Ratio = wins.data$Wins/(  wins.data$Wins + wins.data$Loses)                         
+                                  
+                                  
