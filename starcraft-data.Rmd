@@ -95,7 +95,9 @@ library(ggthemes)
 load("scripts/datos/match.Rdata")
 ggplot(aes(x=WL),data=match.data)+geom_bar()+theme_tufte()+xlab("Winner.Loser")
 ```
-The combination Terran vs. Protoss includes the bigger number of matches, with around 1200.
+The combination Terran vs. Protoss includes the bigger number of
+matches, with close to two thousands, of which the majority are won by
+the Terran.
 
 <!-- Porcentaje de victorias de cada una de las razas -->
 

@@ -18,3 +18,4 @@ for( i in 1:nrow(duration)) {
                                    Loser=t.row$Loser_Race,
                                    Duration=duration[i,"maxFrames"]))
 }
+match.data$WL=interaction(match.data$Winner,match.data$Loser)
