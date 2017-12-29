@@ -225,7 +225,7 @@ starcraft-data.pdf
 
 **/.RData
 **/.Rhistory
-scripts/datos/normalizado.csv
+scripts/datos/normalizado.csv*
 
 ## (useless) cache
 *_cache/
