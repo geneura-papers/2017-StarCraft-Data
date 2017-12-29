@@ -13,8 +13,8 @@ author:
   name: Victor Rivas
 date: "27 de noviembre de 2017"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 bibliography: prediction.bib
 abstract: The game Starcraft is one of the most interesting arenas to test new machine
   learning and computational intelligence techniques; however, StarCraft matches take
@@ -46,7 +46,7 @@ unique.ids <- length(duration$id)
 
 # Introduction
 
-\emph{StarCraft} is a well-known Real Time Strategy (\emph{RTS}) game whose first version was released in 1998 [@yoon2001starcraft]. The game consists of two opponents trying to beat each other over a square-shaped arena. Every player has to spawn workers and create buildings using the available resources, which are located over the terrain. Players can use one of three different kinds of species with different kinds of individuals, which differ in their skills, so that players have a wide range of possibilities in order to plan their strategies. The need to dynamically take decisions for both the short and the long terms make RTS adequate scenarios to test AI algorithms [@ontanon2013survey] that could be used later in real problems including financial, military and logistics scenarios. 
+\emph{StarCraft} is a well-known Real Time Strategy (\emph{RTS}) game whose first version was released in 1998 [@yoon2001starcraft]. The game consists of two opponents trying to beat each other over a square-shaped arena. Every player has to spawn workers and create buildings using the available resources, which are located over the terrain. Players can use one of three different kinds of species, called Zergs, Protoss or Terrans, with different kinds of individuals, which differ in their skills, so that players have a wide range of possibilities in order to plan their strategies. The need to dynamically take decisions for both the short and the long terms make RTS adequate scenarios to test AI algorithms [@ontanon2013survey] that could be used later in real problems including financial, military and logistics scenarios. 
 
 \emph{StarCraft} has become popular among researchers thanks in part to \emph{BWAPI}, an API developed by the community that allows programming artificial agents and that was developed for StarCraft competitions [@buro2012real]. These agents can act just like regular players, according to a previously established algorithm; but, more importantly, they can collect data as matches are running. The data collected this way can be later analysed, so that machine learning techniques can be applied for both supervised and unsupervised learning.
 
@@ -109,7 +109,7 @@ ggplot(aes(x=WL),data=match.data)+geom_bar()+theme_tufte()+xlab("Winner.Loser")
 ```
 The combination Terran vs. Protoss includes the bigger number of
 matches, with close to two thousands, of which the majority are won by
-the Terran. But in fact, the race that wins the most games it is involved it are teh Zerg, as is shown below. 
+the Terran. But in fact, the race that wins the most games it is involved it are the Zerg, as is shown below. 
 
 ```{r wins, echo=FALSE}
 wins.data <- data.frame(Race=character(),
@@ -140,7 +140,10 @@ And the chart shows that, except for the matches that include Zerg against Zerg 
 ## Conclusions
 
 Our intention with the release of RedDwarfData and this report was to introduce a new lightweight dataset that includes matches by all races and that can be used for drawing conclusions about Starcraft matches, as well as use them to actually train bots that play Starcraft. An initial exploratory analysis draws the conclusion that the Zerg might be the best race to use in a game bot; however, this macro conclusion will have to be qualified by an actual analysis of the strategies generally used by Zergs in the particular games included in the data set.
-RedDwarfData and the scripts that are used to process it are hosted [in Github: `https://github.com/analca3/StarCraft-winner-prediction`](https://github.com/analca3/StarCraft-winner-prediction). This paper is hosted also in GitHub, and includes the scripts used to generate aggregated data and the data that has been used to generate this paper, which is written in R Markdown and includes the scripts to generate these charts. It has a Apache license and can be downloaded [from GitHub at https://github.com/geneura-papers/2017-StarCraft-Data](https://github.com/geneura-papers/2017-StarCraft-Data)
+RedDwarfData and the scripts that are used to process it are hosted [in Github: `https://github.com/analca3/StarCraft-winner-prediction`](https://github.com/analca3/StarCraft-winner-prediction). This paper is hosted also in GitHub, and includes the scripts used to generate aggregated data and the data that has been used to generate this paper, which is written in R Markdown and includes the scripts to generate these charts. It has a Apache license and can be downloaded [from GitHub at `https://github.com/geneura-papers/2017-StarCraft-Data`](https://github.com/geneura-papers/2017-StarCraft-Data)
 
+## Acknowledgements
+
+This paper has been funded in part by the Spanish national excellence project TIN2014-56494-C4-3-P (EphemeCH). We acknowledge also the support of TIN2017-85727-C4-2-P (DeepBio).
 
 ## References
