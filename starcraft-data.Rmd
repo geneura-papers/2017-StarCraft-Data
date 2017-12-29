@@ -129,8 +129,18 @@ wins.data$Ratio = wins.data$Wins/(  wins.data$Wins + wins.data$Loses)
 ggplot(aes(x=reorder(Race,-Ratio),y=Ratio),data=wins.data)+geom_bar(stat="identity")+theme_tufte()+xlab("Winner matches per race")
 ```
 
-Both macro measures show that the data set is well balanced, and includes battles in all possible combinations. 
+Both macro measures show that the data set is well balanced, and includes battles in all possible combinations. On the other hand, we can use match data to find out if the duration of the match is affected by the combination of races
+
+```{r match.duration,echo=FALSE}
+ ggplot(aes(x=WL,y=Duration),data=match.data)+geom_boxplot()+theme_tufte()+xlab("Winner.Loser")
+```
+
+And the chart shows that, except for the matches that include Zerg against Zerg and Protoss vs. Protoss, duration is quite similar and is more affected by the game dynamics that by differences or similarities between races. 
 
 ## Conclusions
+
+Our intention with the release of RedDwarfData and this report was to introduce a new lightweight dataset that includes matches by all races and that can be used for drawing conclusions about Starcraft matches, as well as use them to actually train bots that play Starcraft. An initial exploratory analysis draws the conclusion that the Zerg might be the best race to use in a game bot; however, this macro conclusion will have to be qualified by an actual analysis of the strategies generally used by Zergs in the particular games included in the data set.
+RedDwarfData and the scripts that are used to process it are hosted [in Github: `https://github.com/analca3/StarCraft-winner-prediction`](https://github.com/analca3/StarCraft-winner-prediction). This paper is hosted also in GitHub, and includes the scripts used to generate aggregated data and the data that has been used to generate this paper, which is written in R Markdown and includes the scripts to generate these charts. It has a Apache license and can be downloaded [from GitHub at https://github.com/geneura-papers/2017-StarCraft-Data](https://github.com/geneura-papers/2017-StarCraft-Data)
+
 
 ## References
